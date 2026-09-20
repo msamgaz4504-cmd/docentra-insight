@@ -1,0 +1,649 @@
+:root {
+    --bg: #f7f8fb;
+    --surface: #ffffff;
+    --surface-soft: #f9fafc;
+
+    --text: #111318;
+    --text-soft: #626875;
+    --text-muted: #8b909b;
+
+    --border: #e7e9ef;
+    --border-strong: #d9dde7;
+
+    --accent: #4f6df5;
+    --accent-dark: #3f59d9;
+    --accent-soft: #eef1ff;
+
+    --success: #287a55;
+    --success-soft: #edf8f2;
+
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --radius-xl: 30px;
+
+    --shadow-soft:
+        0 1px 2px rgba(15, 23, 42, 0.02),
+        0 8px 30px rgba(15, 23, 42, 0.045);
+
+    --shadow-card:
+        0 10px 35px rgba(20, 27, 45, 0.055);
+}
+
+
+/* GLOBAL */
+
+html,
+body,
+[class*="css"] {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+[data-testid="stAppViewContainer"] {
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(79, 109, 245, 0.08),
+            transparent 32%
+        ),
+        var(--bg);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+[data-testid="stToolbar"] {
+    visibility: hidden;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+.block-container {
+    max-width: 1180px;
+    padding-top: 1.4rem;
+    padding-bottom: 5rem;
+}
+
+
+/* TOP BAR */
+
+.docentra-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 60px;
+    padding: 8px 2px;
+}
+
+.docentra-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.docentra-brand-mark {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #5b78ff,
+            #3f59d9
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(79, 109, 245, 0.22);
+}
+
+.docentra-brand-name {
+    color: var(--text);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* HERO */
+
+.docentra-hero {
+    max-width: 820px;
+
+    margin:
+        0 auto
+        48px auto;
+
+    text-align: center;
+}
+
+.docentra-title {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: clamp(
+        40px,
+        6vw,
+        68px
+    );
+
+    font-weight: 700;
+
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+}
+
+.docentra-title-accent {
+    color: var(--accent);
+}
+
+.docentra-subtitle {
+    max-width: 700px;
+
+    margin:
+        24px auto
+        0 auto;
+
+    color: var(--text-soft);
+
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+
+/* SURFACE */
+
+.docentra-surface {
+    margin-bottom: 22px;
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-xl);
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.docentra-surface-title {
+    margin: 0 0 7px 0;
+
+    color: var(--text);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.025em;
+}
+
+.docentra-surface-description {
+    margin: 0 0 22px 0;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* FILE UPLOADER */
+
+[data-testid="stFileUploader"] {
+    margin-top: 8px;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+    min-height: 185px;
+
+    padding: 26px;
+
+    border:
+        1.5px dashed
+        var(--border-strong);
+
+    border-radius: var(--radius-lg);
+
+    background: var(--surface-soft);
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+    border-color: #aab6fa;
+
+    background: #fafbff;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(79, 109, 245, 0.04);
+}
+
+[data-testid="stFileUploaderDropzone"] button {
+    border: 1px solid var(--border-strong);
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-weight: 600;
+
+    box-shadow: none;
+}
+
+[data-testid="stFileUploaderDropzone"] button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+/* BUTTONS */
+
+.stButton > button {
+    min-height: 46px;
+
+    padding:
+        0 22px;
+
+    border: 0;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    box-shadow:
+        0 9px 20px
+        rgba(79, 109, 245, 0.18);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.stButton > button:hover {
+    color: white;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 26px
+        rgba(79, 109, 245, 0.23);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+
+/* DOCUMENT STATUS */
+
+.docentra-document-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.docentra-pill {
+    display: inline-flex;
+    align-items: center;
+
+    padding:
+        7px 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    background: var(--surface-soft);
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.docentra-pill-success {
+    border-color: #d8eee2;
+
+    background: var(--success-soft);
+
+    color: var(--success);
+}
+
+
+/* SECTION HEADINGS */
+
+.docentra-section-heading {
+    margin:
+        44px 0
+        18px 0;
+}
+
+.docentra-section-heading h2 {
+    margin: 0 0 6px 0;
+
+    color: var(--text);
+
+    font-size: 26px;
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+}
+
+.docentra-section-heading p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+}
+
+
+/* INFORMATION GRID */
+
+.docentra-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 14px;
+}
+
+.docentra-info-card {
+    min-height: 115px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+
+    box-shadow:
+        0 4px 16px
+        rgba(15, 23, 42, 0.025);
+}
+
+.docentra-info-label {
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.065em;
+}
+
+.docentra-info-value {
+    color: var(--text);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+}
+
+.docentra-info-empty {
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* SELECTBOX */
+
+[data-testid="stSelectbox"] label {
+    color: var(--text-soft);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+[data-testid="stSelectbox"] > div > div {
+    border-radius: 13px;
+}
+
+
+/* CHAT */
+
+.docentra-chat-heading {
+    max-width: 660px;
+
+    margin:
+        12px auto
+        24px auto;
+
+    text-align: center;
+}
+
+.docentra-chat-heading h2 {
+    margin: 0 0 9px 0;
+
+    color: var(--text);
+
+    font-size: 29px;
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+}
+
+.docentra-chat-heading p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* CHAT INPUT */
+
+[data-testid="stChatInput"] {
+    border:
+        1px solid
+        var(--border-strong);
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 23, 42, 0.045);
+}
+
+
+/* ANSWER */
+
+.docentra-answer {
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    padding: 20px 22px;
+
+    border: 1px solid #dfe4ff;
+
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f8ff,
+            #ffffff
+        );
+}
+
+.docentra-answer-label {
+    margin-bottom: 8px;
+
+    color: var(--accent-dark);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+    letter-spacing: 0.065em;
+}
+
+.docentra-answer-text {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+
+/* QUESTION HISTORY */
+
+.docentra-question-item {
+    margin-bottom: 8px;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--surface-soft);
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+
+/* STREAMLIT ALERTS */
+
+[data-testid="stAlert"] {
+    border-radius: 16px;
+
+    border-width: 1px;
+
+    box-shadow: none;
+}
+
+
+/* FOOTNOTE */
+
+.docentra-footnote {
+    margin-top: 44px;
+
+    text-align: center;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .block-container {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .docentra-info-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .docentra-title {
+        font-size: 46px;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .docentra-topbar {
+        margin-bottom: 42px;
+    }
+
+    .docentra-title {
+        font-size: 39px;
+    }
+
+    .docentra-subtitle {
+        font-size: 15px;
+    }
+
+    .docentra-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .docentra-info-card {
+        min-height: auto;
+    }
+}
